@@ -10,15 +10,24 @@ public class ReceptionistTest {
 	
 	@Before 
 	public void setup() {
-		underTest = new Receptionist("");
+		underTest = new Receptionist("", null, false);
 	}
+	
 	@Test
 	public void answerTheDamnPhone() {
-		Boolean phoneStatusBeforeAnswering = underTest.getAnswerTheDamnPhone();
+		Boolean phoneStatusBeforeAnswering = underTest.getMainTaskStatus();
 		underTest.togglePhoneStatus();
-		Boolean phoneStatusAfterAnswering = underTest.getAnswerTheDamnPhone();
-		assertEquals(false, phoneStatusBeforeAnswering);
-
+		Boolean phoneStatusAfterAnswering = underTest.getMainTaskStatus();
+		assertEquals(true, phoneStatusAfterAnswering);
+	}
+	
+	@Test
+	public void hangUpTheDamnPhone() {
+		Boolean phoneStatusBeforeHangingUp = underTest.getMainTaskStatus();
+		underTest.togglePhoneStatus();
+		underTest.togglePhoneStatus();
+		Boolean phoneStatusAfterHangingUp = underTest.getMainTaskStatus();
+		assertEquals(false, phoneStatusAfterHangingUp);
 	}
 
 }

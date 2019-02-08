@@ -12,13 +12,11 @@ public class Receptionist {
 		this.idNumber = idNumber;
 		this.mainTaskStatus = false;
 		this.pay = 45000;
-
 	}
 
 // Getters
 	public String getName() {
 		return name;
-
 	}
 
 	public String getIdNumber() {
@@ -31,13 +29,11 @@ public class Receptionist {
 
 	public int getPay() {
 		return pay;
-
 	}
 
 // Start of Methods
 	public void togglePhoneStatus() {
 		mainTaskStatus = !mainTaskStatus;
-
 	}
 
 }
