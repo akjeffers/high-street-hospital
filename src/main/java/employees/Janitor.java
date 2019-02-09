@@ -1,6 +1,6 @@
 package employees;
 
-public class Janitor extends Employee {
+public abstract class Janitor extends Employee {
 	
 	private boolean mainTaskStatus;
 	private int hospitalCleanliness;
@@ -32,5 +32,6 @@ public class Janitor extends Employee {
 	public void toggleWorkStatus() {
 		mainTaskStatus = !mainTaskStatus;
 	}
+	
 	
 }

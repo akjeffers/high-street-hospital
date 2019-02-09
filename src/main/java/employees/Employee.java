@@ -29,7 +29,7 @@ public abstract class Employee {
 	public int getPay() {
 		return pay;
 	}
-	
+
 	public String calculatePay() {
 		return "$" + pay;
 	}
