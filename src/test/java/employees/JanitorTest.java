@@ -10,7 +10,7 @@ public class JanitorTest {
 	Janitor underTest;
 	@Before
 	public void setup() {
-		underTest = new Janitor("Jorge", "234", "janitor");
+		underTest = new NormalJanitor("Jorge", "234", "janitor");
 	}
 	
 	@Test 

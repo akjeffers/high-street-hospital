@@ -29,5 +29,7 @@ public abstract class Employee {
 	public int getPay() {
 		return pay;
 	}
+	
+	
 
 }
