@@ -13,8 +13,19 @@ public class DoctorTest {
 	Doctor underTest;
 	@Before
 	public void setup() {
-		underTest = new Doctor("Bob", "123", "doctor");
+		underTest = new Surgeon("Bob", "123", "surgeon");
+	}
+	
+	@Test
+	public void shouldPrintString() {
+		underTest.toString();
+		System.out.println(underTest.toString());
 	}
 
+	@Test
+	public void shouldGetName() {
+		underTest.getName();
+		System.out.println(underTest.getName());
+	}
 
 }

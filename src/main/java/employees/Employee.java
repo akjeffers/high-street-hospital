@@ -22,12 +22,21 @@ public abstract class Employee {
 		return idNumber;
 	}
 	
-	public String getPostion() {
+	public String getPosition() {
 		return position;
 	}
 	
 	public int getPay() {
 		return pay;
 	}
+	
+	public String calculatePay() {
+		return "$" + pay;
+	}
+	
+//	public String toString() {
+//		return position + " " + name;
+//		// + " " + idNumber
+//	}
 
 }

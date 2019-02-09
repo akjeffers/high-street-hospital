@@ -11,6 +11,13 @@ public abstract class Doctor extends Employee {
 		this.pay = 90000;
 	}
 	
+	public String toString() {
+		return getPosition() + " " + getName() + " " + getIdNumber() + " " + specialty;
+	}
+	
+	public String getSpecialty() {
+		return specialty;
+	}
 	//add specialty area thing...........................................
 
 }

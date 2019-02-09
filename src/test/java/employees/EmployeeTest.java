@@ -19,4 +19,10 @@ public class EmployeeTest {
 		underTest.getName();
 		assertEquals("Anna", underTest.getName());
 	}
+	
+//	@Test
+//	public void shouldPrintString() {
+//		underTest.toString();
+//		System.out.println(underTest.toString());
+//	}
 }
