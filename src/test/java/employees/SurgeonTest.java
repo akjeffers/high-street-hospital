@@ -10,7 +10,7 @@ public class SurgeonTest {
 
 	@Before
 	public void setup() {
-		underTest = new Surgeon("");
+		underTest = new Surgeon("Jen", "999", "surgeon");
 	}
 
 	@Test

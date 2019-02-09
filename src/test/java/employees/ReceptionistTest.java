@@ -10,7 +10,7 @@ public class ReceptionistTest {
 	
 	@Before 
 	public void setup() {
-		underTest = new Receptionist("", null, false);
+		underTest = new Receptionist("Jason", "777", "receptionist");
 	}
 	
 	@Test

@@ -10,14 +10,9 @@ public class JanitorTest {
 	Janitor underTest;
 	@Before
 	public void setup() {
-		underTest = new Janitor("Jorge", "234", false);
+		underTest = new Janitor("Jorge", "234", "janitor");
 	}
 	
-	@Test
-	public void shouldHaveName() {
-		assertEquals("Jorge", underTest.getName());
-	}
-
 	@Test 
 	public void shouldCleanHospital() {
 		int cleanlinessBeforeCleaning = underTest.getHospitalCleanliness();

@@ -1,26 +1,16 @@
 package employees;
 
-public class Janitor {
+public class Janitor extends Employee {
 	
-	private String name;
-	private String idNumber;
 	private boolean mainTaskStatus;
 	private int hospitalCleanliness;
 	private int pay;
 	
-	public Janitor(String name, String idNumber, boolean workStatus) {
-		this.name = name;
-		this.idNumber = idNumber;
+	public Janitor(String name, String idNumber, String position) {
+		super(name, idNumber, position);
 		this.mainTaskStatus = false;
+		this.hospitalCleanliness = hospitalCleanliness;
 		this.pay = 40000;
-	}
-
-	public String getName() {
-		return name;
-	}
-	
-	public String getIdNumber() {
-		return idNumber;
 	}
 
 	public boolean getMainTaskStatus() {

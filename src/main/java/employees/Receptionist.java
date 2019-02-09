@@ -1,28 +1,18 @@
 package employees;
 
-public class Receptionist {
+public class Receptionist extends Employee {
 
-	private String name;
-	private String idNumber;
 	private Boolean mainTaskStatus;
 	private int pay;
-
-	public Receptionist(String name, String idNumber, boolean workStatus) {
-		this.name = name;
-		this.idNumber = idNumber;
+	
+	public Receptionist(String name, String idNumber, String position) {
+		super(name, idNumber, position);
 		this.mainTaskStatus = false;
 		this.pay = 45000;
 	}
 
 // Getters
-	public String getName() {
-		return name;
-	}
-
-	public String getIdNumber() {
-		return idNumber;
-	}
-
+	
 	public Boolean getMainTaskStatus() {
 		return mainTaskStatus;
 	}

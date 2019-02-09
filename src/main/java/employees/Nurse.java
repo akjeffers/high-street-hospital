@@ -1,26 +1,16 @@
 package employees;
 
-public class Nurse {
+public class Nurse extends Employee {
 
-	private String name;
-	private String idNumber;
 	private int pay;
-
-	public Nurse(String name, String idNumber) {
-		this.name = name;
-		this.idNumber = idNumber;
+	
+	public Nurse(String name, String idNumber, String position) {
+		super(name, idNumber, position);
 		this.pay = 50000;
 	}
 
 // Getters
-	public String getName() {
-		return name;
-	}
-
-	public String getIdNumber() {
-		return idNumber;
-	}
-
+	
 	public int getPay() {
 		return pay;
 	}

@@ -1,31 +1,17 @@
 package employees;
 
-public class Surgeon {
+public class Surgeon extends Doctor {
 
-	public Surgeon(String name) {
-
-	}
-
-	private String name;
-	private String idNumber;
 	private boolean mainTaskStatus;
 	private int pay;
-
-	public Surgeon(String name, String idNumber, boolean workStatus) {
-		this.name = name;
-		this.idNumber = idNumber;
+	
+	public Surgeon(String name, String idNumber, String position) {
+		super(name, idNumber, position);
 		this.mainTaskStatus = false;
 		this.pay = 120000;
 	}
+	
 	// Getters
-
-	public String getName() {
-		return name;
-	}
-
-	public String getIdNumber() {
-		return idNumber;
-	}
 
 	public boolean getMainTaskStatus() {
 		return mainTaskStatus;
