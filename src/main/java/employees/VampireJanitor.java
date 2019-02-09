@@ -1,6 +1,6 @@
 package employees;
 
-public abstract class VampireJanitor extends Janitor implements BloodDraw {
+public class VampireJanitor extends Janitor implements BloodDraw {
 
 	public VampireJanitor(String name, String idNumber, String position) {
 		super(name, idNumber, position);

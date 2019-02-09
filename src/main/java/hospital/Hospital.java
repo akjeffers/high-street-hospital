@@ -1,63 +1,45 @@
-package employees;
+package hospital;
 
 import java.util.HashMap;
 
-public abstract class Employee {
-	
-	private String name;
-	private String idNumber;
-	private String position;
-	private int pay;
-	
-	public Employee(String name, String idNumber, String position) {
-		this.name = name;
-		this.idNumber = idNumber;
-		this.position = position;
-		this.pay = pay;
-	}
+import employees.Doctor;
+import employees.Employee;
+import employees.NormalJanitor;
+import employees.Nurse;
+import employees.Receptionist;
+import employees.Surgeon;
+import employees.VampireJanitor;
+
+public class Hospital {
 	
 	private HashMap<String, Employee> employees = new HashMap<String, Employee>();
+	private int cleanliness;
 	
 //	Employee surgeon = new Surgeon("John", "123", "surgeon");
 //	Employee nurse = new Nurse("Bob", "222", "nurse");
 //	Employee receptionist = new Receptionist("Jan", "333", "receptionist");
 //	Employee vampireJanitor = new VampireJanitor("Joe", "444", "vampire janitor");
 //	Employee normalJanitor = new NormalJanitor("Nancy", "555", "janitor");
-	
+//	
 	
 	public HashMap<String, Employee> getEmployees() {
 		return employees;
 	}
 	
+	public int getHospitalSize() {
+		return employees.size();
+	}
+		
 	public void getEmployeeNames() {
 		for (Employee employee : employees.values()) {
 			System.out.println(employee.getName());
 		}
 	}
-		
-	public String getName() {
-		return name;
-	}
-	
-	public String getIdNumber() {
-		return idNumber;
-	}
-	
-	public String getPosition() {
-		return position;
-	}
-	
-	public int getPay() {
-		return pay;
-	}
 
-	public String calculatePay() {
-		return "$" + pay;
+	public void addEmployee(Employee employee) {
+		employees.put(employee.getName(), employee);	
 	}
 	
-//	public String toString() {
-//		return position + " " + name;
-//		// + " " + idNumber
-//	}
+
 
 }
