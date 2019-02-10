@@ -9,6 +9,7 @@ public class Application {
 
 	private static String userInput;
 	private static String patientName;
+	private static String individualCare;
 
 	public static void main(String[] args) {
 
@@ -56,7 +57,7 @@ public class Application {
 			System.out.println("3. Care for all patients");
 			System.out.println("4. Care for individual patient");
 			System.out.println("5. Have a janitor clean the hospital");
-			System.out.println("0. Quit");
+			System.out.println("6. Quit");
 
 			// handle user commands
 			String mainMenuChoice = input.nextLine();
@@ -114,7 +115,6 @@ public class Application {
 						
 					case "2":
 						for (Patient patient : hospital.getPatients().values()) {
-							
 							System.out.println(patient.toString());
 							nurse.drawBlood(patient);
 							System.out.println(patient.toString());
@@ -128,30 +128,102 @@ public class Application {
 
 				}
 				break;
-			case "4":
-
-				System.out.println("You've chosen item #4");
-				System.out.println(" 1 - Take care of individual patient");
-				System.out.println(" 2. - Draw blood from individual patient");
-
-	
-				for (Patient patient : hospital.getPatients().values()) {
-					System.out.println(patient.toString());	
-				}
-				System.out.println("Type in patient name to proceed");
-				patientName = input.nextLine();
 				
+			case "4":
+				
+				boolean repeatIndividualCare = true;
+				
+				while (repeatIndividualCare) {
+					
+					System.out.println("You've chosen item #4");
+					System.out.println(" 1 - Take care of individual patient");
+					System.out.println(" 2. - Draw blood from individual patient");
+					System.out.println(" 3. - Return to main menu");
+					individualCare = input.nextLine();
+				
+					switch (individualCare) {
+					
+					case "1":
 
+						for (Patient patient : hospital.getPatients().values()) {
+							System.out.println(patient.toString());	
+						}
+						System.out.println("Type in patient name to proceed");
+						patientName = input.nextLine();
+						Patient patientChoice = hospital.findPatient(patientName);
+						System.out.println(patientChoice.getName() + " is so happy to be helped!");
+				
+						nurse.careForPatient(patientChoice);
+						System.out.println(patientChoice.toString());
+
+					break;
+					
+					case "2":
+						
+						for (Patient patient : hospital.getPatients().values()) {
+							System.out.println(patient.toString());	
+						}
+						System.out.println("Type in patient name to proceed");
+						patientName = input.nextLine();
+						Patient patientBloodChoice = hospital.findPatient(patientName);
+						System.out.println(patientBloodChoice.getName() + " is so happy to be helped!");
+				
+						nurse.drawBlood(patientBloodChoice);
+						System.out.println(patientBloodChoice.toString());
+					break;
+						
+					case "3":
+						repeatIndividualCare = false;
+					break;
+					
+					}
+				}
 				break;
-
+				
 			case "5":
 
-				System.out.println("You've chosen item #5");
-
-				// do something...
-
-				break;
-
+				boolean repeatJanitorMenu = true;
+				while (repeatJanitorMenu) {
+					
+					System.out.println("You've chosen item #5");
+					System.out.println("Which janitor would you like to have sweep?");
+					System.out.println("1. - Normal Janitor");
+					System.out.println("2. - Vampire Janitor");
+					System.out.println("3. - Get Cleanliness level of hospital");
+					System.out.println("4. - Return to main menu");
+					String janitorChoice = input.nextLine();
+			
+					switch (janitorChoice) {
+					
+					case "1":
+						normalJanitor.sweepHospital(hospital);	
+					break;
+					
+					case "2":
+						vampireJanitor.sweepHospital(hospital);
+						System.out.println(hospital.getPatients().toString());
+						vampireJanitor.drawBlood(firstPatient);
+						vampireJanitor.drawBlood(secondPatient);
+						vampireJanitor.drawBlood(thirdPatient);
+						vampireJanitor.drawBlood(fourthPatient);
+						vampireJanitor.drawBlood(fifthPatient);
+						System.out.println(hospital.getPatients().toString());
+						System.out.println("Oh no! The vampire janitor took blood from"
+								+ " all patients while sweeping!");
+					break;
+					
+					case "3":
+						System.out.println(hospital.getCleanliness());
+					break;	
+						
+					case "4":
+						repeatJanitorMenu = false;
+					break;
+					
+					}	
+					
+				}
+					break;
 			case "6":
 
 				repeatMainMenu = false;

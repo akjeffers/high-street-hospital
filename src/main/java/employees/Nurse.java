@@ -16,8 +16,8 @@ public class Nurse extends Employee implements BloodDraw, CareForPatient {
 	}
 
 	@Override
-	public void careForPatient(Patient patient) {
-		patient.increaseHealth(2);
+	public void careForPatient(Patient patientName) {
+		patientName.increaseHealth(2);
 	}
 
 	@Override

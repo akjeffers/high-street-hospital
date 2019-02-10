@@ -59,6 +59,10 @@ public class Hospital {
 			System.out.println(patient.getName());
 		}
 	}
+	
+	public Patient findPatient(String patientName) {
+		return patients.get(patientName);
+	}
 
 	public void addEmployee(Employee employee) {
 		employees.put(employee.getName(), employee);	
