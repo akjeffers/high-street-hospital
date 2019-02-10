@@ -7,15 +7,17 @@ import org.junit.Test;
 
 import patient.Patient;
 
-
 public class DoctorTest {
-	
+
 	Doctor underTest;
+	Patient patientTest;
+
 	@Before
 	public void setup() {
-		underTest = new Surgeon("Bob", "123", "surgeon");
+		underTest = new Doctor("Bob", "123", "Doctor");
+		patientTest = new Patient("Fancy", "45", 20, 10);
 	}
-	
+
 	@Test
 	public void shouldPrintString() {
 		underTest.toString();
@@ -28,4 +30,20 @@ public class DoctorTest {
 		System.out.println(underTest.getName());
 	}
 
+	@Test
+	public void shouldCareForPatient() {
+		int healthBeforeCare = patientTest.getHealthLevel();
+		underTest.careForPatient(patientTest);
+		int healthAfterCare = patientTest.getHealthLevel();
+		assertEquals(healthAfterCare, healthBeforeCare + 3);
+
+	}
+	
+	@Test 
+	public void shouldDrawnBloodFromPatient() {
+		int bloodLevelBeforeDrawn = patientTest.getBloodLevel();
+		underTest.drawBlood(patientTest);
+		int bloodLevelAfterDrawn = patientTest.getBloodLevel();
+		assertEquals(bloodLevelAfterDrawn, bloodLevelBeforeDrawn - 2);
+	}
 }
