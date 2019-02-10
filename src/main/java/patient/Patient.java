@@ -30,7 +30,7 @@ public class Patient {
 		bloodLevel -= i;	
 	}
 	
-	public void increaseHealth( int i) {
+	public void increaseHealth(int i) {
 		healthLevel += i;
 	}
 	 

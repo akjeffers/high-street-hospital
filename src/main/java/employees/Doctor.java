@@ -24,7 +24,7 @@ public class Doctor extends Employee implements BloodDraw, CareForPatient {
 
 	@Override
 	public void careForPatient(Patient patient) {
-		// TODO Auto-generated method stub
+		patient.increaseHealth(3);
 		
 	}
 
@@ -36,8 +36,7 @@ public class Doctor extends Employee implements BloodDraw, CareForPatient {
 
 	@Override
 	public int calculatePay() {
-		// TODO Auto-generated method stub
-		return 0;
+		return 90000;
 	}
 
 }

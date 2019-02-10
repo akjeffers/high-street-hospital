@@ -36,12 +36,12 @@ public class Surgeon extends Doctor implements BloodDraw, CareForPatient {
 
 	@Override
 	public void careForPatient(Patient patient) {
-		patient.increaseHealth(i);
+		patient.increaseHealth(5);
 		
 	}
 
 	@Override
 	public void drawBlood(Patient patient) {
-		patient.lowerBloodLevel(5);
+		patient.lowerBloodLevel(4);
 	}
 }

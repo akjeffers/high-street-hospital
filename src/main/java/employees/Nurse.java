@@ -26,13 +26,13 @@ public class Nurse extends Employee implements BloodDraw, CareForPatient {
 
 	@Override
 	public void careForPatient(Patient patient) {
-		patient.lowerBloodLevel(1);
-		
+		patient.increaseHealth(2);
 	}
 
 	@Override
 	public void drawBlood(Patient patient) {
-		// TODO Auto-generated method stub
+		patient.lowerBloodLevel(1);
+
 		
 	}
 
