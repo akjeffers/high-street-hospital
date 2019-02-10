@@ -4,6 +4,6 @@ import hospital.Hospital;
 
 public interface Sweeping {
 	
-	public void sweepHospital(Hospital hospital);
+	public abstract void sweepHospital(Hospital hospital);
 
 }

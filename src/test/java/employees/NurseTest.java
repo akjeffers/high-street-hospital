@@ -27,5 +27,5 @@ public class NurseTest {
 		assertEquals(healthAfterCare, healthBeforeCare + 2);
 	}
 
-
+	
 }

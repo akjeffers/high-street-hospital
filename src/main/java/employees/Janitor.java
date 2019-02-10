@@ -3,7 +3,6 @@ package employees;
 public abstract class Janitor extends Employee {
 	
 	private boolean mainTaskStatus;
-	private int hospitalCleanliness;
 	
 	public Janitor(String name, String idNumber, String position) {
 		super(name, idNumber, position);
@@ -18,9 +17,5 @@ public abstract class Janitor extends Employee {
 		mainTaskStatus = !mainTaskStatus;
 	}
 	
-	//below may need changed................................
-	public void cleanHospital() {
-		hospitalCleanliness += 10;
-	}
-
+	
 }
