@@ -7,5 +7,9 @@ public class VampireJanitor extends Janitor implements BloodDraw {
 
 	}
 
-	public abstract void drawBlood();
+	@Override
+	public void drawBlood() {
+		
+	}
+
 }

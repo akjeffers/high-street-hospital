@@ -9,25 +9,28 @@ import employees.Nurse;
 import employees.Receptionist;
 import employees.Surgeon;
 import employees.VampireJanitor;
+import patient.Patient;
 
 public class Hospital {
 	
 	private HashMap<String, Employee> employees = new HashMap<String, Employee>();
-	private int cleanliness;
-	
-//	Employee surgeon = new Surgeon("John", "123", "surgeon");
-//	Employee nurse = new Nurse("Bob", "222", "nurse");
-//	Employee receptionist = new Receptionist("Jan", "333", "receptionist");
-//	Employee vampireJanitor = new VampireJanitor("Joe", "444", "vampire janitor");
-//	Employee normalJanitor = new NormalJanitor("Nancy", "555", "janitor");
-//	
+	private HashMap<String, Patient> patients = new HashMap<String, Patient>();
+	private int cleanliness = 100;
 	
 	public HashMap<String, Employee> getEmployees() {
 		return employees;
 	}
 	
-	public int getHospitalSize() {
+	public HashMap<String, Patient> getPatients() {
+		return patients;
+	}
+	
+	public int getHospitalEmployeeSize() {
 		return employees.size();
+	}
+	
+	public int getHospitalPatientSize() {
+		return patients.size();
 	}
 		
 	public void getEmployeeNames() {
@@ -35,11 +38,21 @@ public class Hospital {
 			System.out.println(employee.getName());
 		}
 	}
+	
+	public void getPatientNames() {
+		for (Patient patient : patients.values()) {
+			System.out.println(patient.getName());
+		}
+	}
 
 	public void addEmployee(Employee employee) {
 		employees.put(employee.getName(), employee);	
 	}
 	
-
-
+	public void listAllSalaries() {
+		for (Employee employee : employees.values()) {
+			System.out.println(employee.calculatePay());
+		}
+	}
 }
+

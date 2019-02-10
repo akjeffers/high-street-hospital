@@ -1,11 +1,13 @@
 package employees;
 
 public interface BloodDraw {
+	
+	public void getBloodLevel() {
+		patient.getBloodLevel();
+	}
 
-
-	
-	
-	
-	public abstract void drawBlood();
+	public void drawBlood() {
+		bloodLevel -= 2;
+	}
 	
 }

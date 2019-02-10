@@ -25,14 +25,16 @@ public class HospitalTest {
 	
 	@Test
 	public void shouldBeAbleToAddEmployee() {
-		int employeesBeforeAdding = hospital.getHospitalSize();
+		int employeesBeforeAdding = hospital.getHospitalEmployeeSize();
 		hospital.addEmployee(employee);
-		int employeesAfterAdding = hospital.getHospitalSize();
+		int employeesAfterAdding = hospital.getHospitalEmployeeSize();
 		Assert.assertEquals(employeesAfterAdding, employeesBeforeAdding + 1);
 	}
 	
 	@Test
 	public void shouldGetAmountOfEmployees() {
-		System.out.println(hospital.getHospitalSize());
+		System.out.println(hospital.getHospitalEmployeeSize());
 	}
+	
+
 }

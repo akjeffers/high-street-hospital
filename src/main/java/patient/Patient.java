@@ -3,13 +3,13 @@ package patient;
 public class Patient {
 
 	private String name;
-	private int bloodLevel;
-	private int healthLevel;
+	public int bloodLevel;
+	public int healthLevel;
 
 	public Patient(String name, int bloodLevel, int healthLevel) {
 		this.name = name;
-		this.bloodLevel = 50;
-		this.healthLevel = 50;
+		this.bloodLevel = 20;
+		this.healthLevel = 10;
 	}
 
 	public String getName() {

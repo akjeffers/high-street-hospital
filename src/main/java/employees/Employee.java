@@ -16,24 +16,11 @@ public abstract class Employee {
 		this.pay = pay;
 	}
 	
-	private HashMap<String, Employee> employees = new HashMap<String, Employee>();
-	
 //	Employee surgeon = new Surgeon("John", "123", "surgeon");
 //	Employee nurse = new Nurse("Bob", "222", "nurse");
 //	Employee receptionist = new Receptionist("Jan", "333", "receptionist");
 //	Employee vampireJanitor = new VampireJanitor("Joe", "444", "vampire janitor");
 //	Employee normalJanitor = new NormalJanitor("Nancy", "555", "janitor");
-	
-	
-	public HashMap<String, Employee> getEmployees() {
-		return employees;
-	}
-	
-	public void getEmployeeNames() {
-		for (Employee employee : employees.values()) {
-			System.out.println(employee.getName());
-		}
-	}
 		
 	public String getName() {
 		return name;
