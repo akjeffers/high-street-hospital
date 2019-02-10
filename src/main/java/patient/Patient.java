@@ -34,7 +34,6 @@ public class Patient {
 		healthLevel += i;
 	}
 	 
-	@Override
 	public String toString() {
 		return name + " " + bloodLevel + " " + " " + healthLevel;
 	}
