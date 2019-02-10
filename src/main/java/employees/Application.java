@@ -95,19 +95,16 @@ public class Application {
 
 				System.out.println("You've chosen item #3");
 				System.out.println(" 1. - Take care of all patients");
-				System.out.println(" 2. - Draw Blood from all patients");
+				System.out.println(" 2. - Draw blood from all patients");
 				userInput = input.nextLine();
 				
 				switch (userInput) {
 				
 				case "1":
 					for (Patient patient : hospital.getPatients().values()) {
-						System.out.println(patient.toString());
 						
 					}
-					System.out.println("Type in patient name to proceed");
-					patientName = input.nextLine();
-					
+				
 				}
 
 				break;
@@ -116,9 +113,15 @@ public class Application {
 
 				System.out.println("You've chosen item #4");
 				System.out.println(" 1 - Take care of individual patient");
-				System.out.println(" 3. - Draw Blood from individual patient");
+				System.out.println(" 2. - Draw blood from individual patient");
 
-				// do something...
+			case "1":
+				for (Patient patient : hospital.getPatients().values()) {
+					System.out.println(patient.toString());	
+				}
+				System.out.println("Type in patient name to proceed");
+				patientName = input.nextLine();
+				
 
 				break;
 
