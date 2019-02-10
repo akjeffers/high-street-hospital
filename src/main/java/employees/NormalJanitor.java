@@ -26,7 +26,7 @@ public class NormalJanitor extends Janitor implements Sweeping {
 
 	@Override
 	public String toString() {
-		return getPosition() + " " + getName() + " " + getIdNumber() + mainTaskStatus;
+		return getPosition() + " " + getName() + " " + getIdNumber() + " " + mainTaskStatus;
 	}
 
 	@Override

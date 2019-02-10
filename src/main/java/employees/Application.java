@@ -17,11 +17,11 @@ public class Application {
 
 		//see if we can combine constructor lines and adding lines below for patients and employees......
 		
-		Surgeon surgeon = new Surgeon("John", "123", "surgeon");
-		Nurse nurse = new Nurse("Bob", "222", "nurse");
-		Receptionist receptionist = new Receptionist("Jan", "333", "receptionist");
-		VampireJanitor vampireJanitor = new VampireJanitor("Joe", "444", "vampire janitor");
-		NormalJanitor normalJanitor = new NormalJanitor("Nancy", "555", "janitor");
+		Surgeon surgeon = new Surgeon("John", "123", "Surgeon");
+		Nurse nurse = new Nurse("Bob", "222", "Nurse");
+		Receptionist receptionist = new Receptionist("Jan", "333", "Receptionist");
+		VampireJanitor vampireJanitor = new VampireJanitor("Joe", "444", "Vampire Janitor");
+		NormalJanitor normalJanitor = new NormalJanitor("Nancy", "555", "Janitor");
 
 		hospital.addEmployee((Employee) surgeon);
 		hospital.addEmployee((Employee) nurse);
@@ -44,22 +44,21 @@ public class Application {
 		System.out.println("Welcome to High St Hospital");
 		System.out.println("---------------------------");
 		
-		// print menu
-		System.out.println("What would you lke to do?");
-		System.out.println("Choose menu item by typing in number: ");
-		System.out.println("1. See employee stats");
-		System.out.println("2. See patient stats");
-		System.out.println("3. Care for all patients");
-		System.out.println("4. Care for individual patient");
-		System.out.println("5. Have a janitor clean the hospital");
-		System.out.println("0. Quit");
-
-		// handle user commands
-
 		boolean repeatMainMenu = true;
 
 		while (repeatMainMenu) {
+			
+			// print menu
+			System.out.println("What would you lke to do?");
+			System.out.println("Choose menu item by typing in number: ");
+			System.out.println("1. See employee stats");
+			System.out.println("2. See patient stats");
+			System.out.println("3. Care for all patients");
+			System.out.println("4. Care for individual patient");
+			System.out.println("5. Have a janitor clean the hospital");
+			System.out.println("0. Quit");
 
+			// handle user commands
 			String mainMenuChoice = input.nextLine();
 
 			switch (mainMenuChoice) {
@@ -93,29 +92,49 @@ public class Application {
 
 			case "3":
 
-				System.out.println("You've chosen item #3");
-				System.out.println(" 1. - Take care of all patients");
-				System.out.println(" 2. - Draw blood from all patients");
-				userInput = input.nextLine();
+				boolean repeatCareAllMenu = true;
 				
-				switch (userInput) {
+				while (repeatCareAllMenu) {
 				
-				case "1":
-					for (Patient patient : hospital.getPatients().values()) {
+					System.out.println("You've chosen item #3");
+					System.out.println(" 1. - Take care of all patients");
+					System.out.println(" 2. - Draw blood from all patients");
+					System.out.println(" 3. - Return to main menu");
+					userInput = input.nextLine();
+					
+					switch (userInput) {
+					
+					case "1":
+						for (Patient patient : hospital.getPatients().values()) {
+							System.out.println(patient.toString());
+							nurse.careForPatient(patient);
+							System.out.println(patient.toString());
+						}
+						break;
 						
+					case "2":
+						for (Patient patient : hospital.getPatients().values()) {
+							
+							System.out.println(patient.toString());
+							nurse.drawBlood(patient);
+							System.out.println(patient.toString());
+						}
+						break;
+						
+					case "3":
+						repeatCareAllMenu = false;
+						break;
 					}
-				
+
 				}
-
 				break;
-
 			case "4":
 
 				System.out.println("You've chosen item #4");
 				System.out.println(" 1 - Take care of individual patient");
 				System.out.println(" 2. - Draw blood from individual patient");
 
-			case "1":
+	
 				for (Patient patient : hospital.getPatients().values()) {
 					System.out.println(patient.toString());	
 				}
