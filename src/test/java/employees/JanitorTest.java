@@ -5,22 +5,17 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+import hospital.Hospital;
+
 public class JanitorTest {
 
 	Janitor underTest;
+	Hospital hospitalTest;
 	@Before
 	public void setup() {
 		underTest = new NormalJanitor("Jorge", "234", "janitor");
+		hospitalTest = new Hospital();
 	}
-	
-	//change below test after making interface method...................................
-//	@Test 
-//	public void shouldCleanHospital() {
-//		int cleanlinessBeforeCleaning = underTest.getHospitalCleanliness();
-//		underTest.cleanHospital();
-//		int cleanlinessAfterCleaning = underTest.getHospitalCleanliness();
-//		assertEquals(cleanlinessAfterCleaning, cleanlinessBeforeCleaning + 10);
-//	}
 	
 	@Test
 	public void shouldDoMainWorkTask() {
