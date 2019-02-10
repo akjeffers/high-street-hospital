@@ -12,8 +12,11 @@ public class Application {
 
 	public static void main(String[] args) {
 
+		Scanner input = new Scanner(System.in);
 		Hospital hospital = new Hospital();
 
+		//see if we can combine constructor lines and adding lines below for patients and employees......
+		
 		Surgeon surgeon = new Surgeon("John", "123", "surgeon");
 		Nurse nurse = new Nurse("Bob", "222", "nurse");
 		Receptionist receptionist = new Receptionist("Jan", "333", "receptionist");
@@ -40,8 +43,7 @@ public class Application {
 
 		System.out.println("Welcome to High St Hospital");
 		System.out.println("---------------------------");
-		Scanner input = new Scanner(System.in);
-
+		
 		// print menu
 		System.out.println("What would you lke to do?");
 		System.out.println("Choose menu item by typing in number: ");
@@ -54,9 +56,9 @@ public class Application {
 
 		// handle user commands
 
-		boolean quit = false;
+		boolean repeatMainMenu = true;
 
-		while (!quit) {
+		while (repeatMainMenu) {
 
 			String mainMenuChoice = input.nextLine();
 
@@ -68,7 +70,6 @@ public class Application {
 				System.out.println("Which stats would you like to see?");
 				System.out.println("1. Employee names, ID numbers, and jobs");
 				System.out.println("2. Employee salaries");
-				System.out.println("3. Take care of patients -- Draw Blood");
 
 				String employeeStatChoice = input.nextLine();
 
@@ -93,13 +94,12 @@ public class Application {
 			case "3":
 
 				System.out.println("You've chosen item #3");
-				System.out.println(" 1 - Take care of individual patient");
-
-				System.out.println(" 2 - Take care of all patients");
-				System.out.println(" 3. - Draw Blood from individual patient");
-				System.out.println(" 4. - Draw Blood from all patients");
+				System.out.println(" 1. - Take care of all patients");
+				System.out.println(" 2. - Draw Blood from all patients");
 				userInput = input.nextLine();
+				
 				switch (userInput) {
+				
 				case "1":
 					for (Patient patient : hospital.getPatients().values()) {
 						System.out.println(patient.toString());
@@ -115,6 +115,8 @@ public class Application {
 			case "4":
 
 				System.out.println("You've chosen item #4");
+				System.out.println(" 1 - Take care of individual patient");
+				System.out.println(" 3. - Draw Blood from individual patient");
 
 				// do something...
 
@@ -128,9 +130,10 @@ public class Application {
 
 				break;
 
-			case "0":
+			case "6":
 
-				quit = true;
+				repeatMainMenu = false;
+				System.out.println("Bye-bye!");
 
 				break;
 
@@ -141,15 +144,9 @@ public class Application {
 			}
 
 		}
-		while (!quit)
-			;
+		
 
-		System.out.println("Bye-bye!");
-
+		
 	}
-
-//		NormalJanitor janitor2 = new NormalJanitor("TT", "124", "Janitor");
-//		Nurse nurse1 = new Nurse("T", "123", "Nurse");
-//		System.out.println(nurse1.getPay());
 
 }

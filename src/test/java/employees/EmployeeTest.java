@@ -22,9 +22,4 @@ public class EmployeeTest {
 		assertEquals("Anna", underTest.getName());
 	}
 	
-//	@Test
-//	public void shouldPrintString() {
-//		underTest.toString();
-//		System.out.println(underTest.toString());
-//	}
 }

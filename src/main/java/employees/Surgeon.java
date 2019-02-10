@@ -5,13 +5,11 @@ import patient.Patient;
 public class Surgeon extends Doctor implements BloodDraw, CareForPatient {
 
 	private boolean mainTaskStatus;
-	private int pay;
 	private String specialty;
 	
 	public Surgeon(String name, String idNumber, String position) {
 		super(name, idNumber, position);
 		this.mainTaskStatus = false;
-		this.pay = 120000;
 		this.specialty = "surgeon";
 	}
 	
@@ -19,10 +17,6 @@ public class Surgeon extends Doctor implements BloodDraw, CareForPatient {
 
 	public boolean getMainTaskStatus() {
 		return mainTaskStatus;
-	}
-
-	public int getPay() {
-		return pay;
 	}
 	
 	public String getSpecialty() {
@@ -36,8 +30,7 @@ public class Surgeon extends Doctor implements BloodDraw, CareForPatient {
 
 	@Override
 	public void careForPatient(Patient patient) {
-		patient.increaseHealth(5);
-		
+		patient.increaseHealth(5);	
 	}
 
 	@Override
