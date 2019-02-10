@@ -1,6 +1,8 @@
 package employees;
 
-public class Nurse extends Employee {
+import patient.Patient;
+
+public class Nurse extends Employee implements BloodDraw, CareForPatient {
 
 	private int pay;
 	
@@ -13,6 +15,25 @@ public class Nurse extends Employee {
 	
 	public int getPay() {
 		return pay;
+	}
+	
+	
+
+	@Override
+	public int calculatePay() {
+		return 50000;
+	}
+
+	@Override
+	public void careForPatient(Patient patient) {
+		patient.lowerBloodLevel(1);
+		
+	}
+
+	@Override
+	public void drawBlood(Patient patient) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

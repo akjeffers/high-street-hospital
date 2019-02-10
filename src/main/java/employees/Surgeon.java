@@ -1,6 +1,8 @@
 package employees;
 
-public class Surgeon extends Doctor {
+import patient.Patient;
+
+public class Surgeon extends Doctor implements BloodDraw, CareForPatient {
 
 	private boolean mainTaskStatus;
 	private int pay;
@@ -25,5 +27,21 @@ public class Surgeon extends Doctor {
 	
 	public String getSpecialty() {
 		return specialty;
+	}
+
+	@Override
+	public int calculatePay() {
+		return 120000;
+	}
+
+	@Override
+	public void careForPatient(Patient patient) {
+		patient.increaseHealth(i);
+		
+	}
+
+	@Override
+	public void drawBlood(Patient patient) {
+		patient.lowerBloodLevel(5);
 	}
 }

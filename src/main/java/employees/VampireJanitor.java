@@ -1,6 +1,8 @@
 package employees;
 
-public abstract class VampireJanitor extends Janitor implements BloodDraw {
+import patient.Patient;
+
+public class VampireJanitor extends Janitor implements BloodDraw {
 
 	public VampireJanitor(String name, String idNumber, String position) {
 		super(name, idNumber, position);
@@ -8,8 +10,15 @@ public abstract class VampireJanitor extends Janitor implements BloodDraw {
 	}
 
 	@Override
-	public void drawBlood() {
+	public void drawBlood(Patient patient) {
+		patient.lowerBloodLevel(2);
 		
+	}
+
+	@Override
+	public int calculatePay() {
+		
+		return 40000;
 	}
 
 }

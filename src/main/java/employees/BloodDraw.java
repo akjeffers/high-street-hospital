@@ -1,13 +1,10 @@
 package employees;
 
+import patient.Patient;
+
 public interface BloodDraw {
 	
-	public void getBloodLevel() {
-		patient.getBloodLevel();
-	}
 
-	public void drawBlood() {
-		bloodLevel -= 2;
-	}
+	public void drawBlood(Patient patient);
 	
 }

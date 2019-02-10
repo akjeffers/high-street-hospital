@@ -26,4 +26,9 @@ public class Receptionist extends Employee {
 		mainTaskStatus = !mainTaskStatus;
 	}
 
+	@Override
+	public int calculatePay() {
+		return 45000;
+	}
+
 }

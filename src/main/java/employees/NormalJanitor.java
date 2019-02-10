@@ -6,4 +6,9 @@ public class NormalJanitor extends Janitor {
 		super(name, idNumber, position);
 
 	}
+
+	@Override
+	public int calculatePay() {
+		return 40000;
+	}
 }

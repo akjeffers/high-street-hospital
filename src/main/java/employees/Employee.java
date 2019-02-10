@@ -38,13 +38,11 @@ public abstract class Employee {
 		return pay;
 	}
 
-	public String calculatePay() {
-		return "$" + pay;
-	}
+	public abstract int calculatePay();
 	
-//	public String toString() {
-//		return position + " " + name;
-//		// + " " + idNumber
-//	}
+	@Override
+	public String toString() {
+		return position + " " + idNumber + " " + name;
+	}
 
 }

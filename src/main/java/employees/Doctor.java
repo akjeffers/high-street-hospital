@@ -1,6 +1,8 @@
 package employees;
 
-public abstract class Doctor extends Employee {
+import patient.Patient;
+
+public class Doctor extends Employee implements BloodDraw, CareForPatient {
 	
 	private String specialty;
 	private int pay;
@@ -19,5 +21,23 @@ public abstract class Doctor extends Employee {
 		return specialty;
 	}
 	//add specialty area thing...........................................
+
+	@Override
+	public void careForPatient(Patient patient) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void drawBlood(Patient patient) {
+		patient.lowerBloodLevel(2);
+		
+	}
+
+	@Override
+	public int calculatePay() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 }
