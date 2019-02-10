@@ -35,6 +35,6 @@ public class Patient {
 	}
 	 
 	public String toString() {
-		return name + " " + bloodLevel + " " + " " + healthLevel;
+		return name + "'s " + " " + bloodLevel + " " + "and" + " " + healthLevel;
 	}
 }

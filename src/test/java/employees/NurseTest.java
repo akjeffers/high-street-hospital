@@ -26,6 +26,15 @@ public class NurseTest {
 		int healthAfterCare = patientTest.getHealthLevel();
 		assertEquals(healthAfterCare, healthBeforeCare + 2);
 	}
+	
+	@Test
+	public void shouldDrawBloodFromPatient() {
+		int bloodLevelBeforeDrawn = patientTest.getBloodLevel();
+		underTest.drawBlood(patientTest);
+		int bloodLevelAfterDrawn = patientTest.getBloodLevel();
+		assertEquals(bloodLevelAfterDrawn, bloodLevelBeforeDrawn - 1);
+	}
+	
 
 	
 }
