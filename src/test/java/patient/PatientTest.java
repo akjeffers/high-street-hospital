@@ -10,7 +10,7 @@ public class PatientTest {
 	Patient underTest;
 @Before
 public void setup() {
-	underTest = new Patient("John", 50, 50);
+	underTest = new Patient("John", "555", 50, 50);
 	
 }
 

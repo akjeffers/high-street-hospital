@@ -13,7 +13,7 @@ public class EmployeeTest {
 	Employee underTest;
 	@Before
 	public void setup() {
-		underTest = new Surgeon("Anna", "456", "surgeon");
+		underTest = new Surgeon("Anna", "456", "Surgeon");
 	}
 
 	@Test

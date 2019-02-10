@@ -6,6 +6,7 @@ public class Patient {
 	private String idNumber;
 	public int bloodLevel;
 	public int healthLevel;
+	private int patientTick;
 
 	public Patient(String name, String idNumber, int bloodLevel, int healthLevel) {
 		this.name = name;
@@ -34,7 +35,29 @@ public class Patient {
 		healthLevel += i;
 	}
 	 
-	public String toString() {
-		return name + "'s " + " " + bloodLevel + " " + "and" + " " + healthLevel;
+	public void increaseBlood(int i) {
+		bloodLevel += i;
+		
 	}
+	
+	public void decreaseHealth (int i) {
+		healthLevel -= i;
+	}
+	public String toString() {
+		return name + "'s" + " " +"Blood Level:" + " "+ bloodLevel + " " + "and" + " " + "Health Level:" + " " + healthLevel;
+	}
+	
+	public void tick() {
+		decreaseHealth(1);
+		lowerBloodLevel(1);
+		
+		
+	}
+	public int getTick() {
+		return patientTick;
+		
+		
+	
+	}
+
 }

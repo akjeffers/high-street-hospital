@@ -24,12 +24,14 @@ public class Doctor extends Employee implements BloodDraw, CareForPatient {
 	@Override
 	public void careForPatient(Patient patient) {
 		patient.increaseHealth(3);	
+		patient.increaseBlood(2);
 	}
 
 	@Override
 	public void drawBlood(Patient patient) {
 		patient.lowerBloodLevel(2);	
 	}
+	
 
 	@Override
 	public int calculatePay() {
