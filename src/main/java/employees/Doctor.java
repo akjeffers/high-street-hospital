@@ -1,23 +1,38 @@
 package employees;
 
-public class Doctor {
-	
-	private String name;
-	private String idNumber;
-	private String specialty;
+import patient.Patient;
 
-	public Doctor(String name, String idNumber, String specialty) {
-		this.name = name;
-		this.idNumber = idNumber;
+public class Doctor extends Employee implements BloodDraw, CareForPatient {
+	
+	private String specialty;
+	
+	public Doctor(String name, String idNumber, String position) {
+		super(name, idNumber, position);
 		this.specialty = specialty;
 	}
-
-	public String getName() {
-		return name;
+	
+	public String getSpecialty() {
+		return specialty;
+	}
+	
+	public String toString() {
+		return getPosition() + " " + getName() + " " + getIdNumber() + " " + specialty;
+	}
+	
+	@Override
+	public void careForPatient(Patient patient) {
+		patient.increaseHealth(3);	
+		patient.increaseBlood(2);
 	}
 
-	public String getId() {
-		return idNumber;
+	@Override
+	public void drawBlood(Patient patient) {
+		patient.lowerBloodLevel(2);	
+	}
+
+	@Override
+	public int calculatePay() {
+		return 90000;
 	}
 
 }
