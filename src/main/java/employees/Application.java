@@ -223,9 +223,6 @@ public class Application {
 					System.out.println("4. - Return to main menu");
 					System.out.println("-----------------------------------");
 					String janitorChoice = input.nextLine();
-					hospital.tick();
-					hospital.tick();
-					hospital.tick();
 					switch (janitorChoice) {
 
 					case "1":
