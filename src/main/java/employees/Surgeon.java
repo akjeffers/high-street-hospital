@@ -23,8 +23,6 @@ public class Surgeon extends Doctor implements BloodDraw, CareForPatient {
 		return specialty;
 	}
 	
-	
-
 	@Override
 	public int calculatePay() {
 		return 120000;
@@ -40,9 +38,10 @@ public class Surgeon extends Doctor implements BloodDraw, CareForPatient {
 	public void drawBlood(Patient patient) {
 		patient.lowerBloodLevel(4);
 	}
+	
 	@Override
 	public String toString() {
-		return getPosition() + " " + getName() + " " + getIdNumber() + " " + getMainTaskStatus();
-		
+		return getPosition() + " " + getName() + " " + getIdNumber() + " " + getMainTaskStatus();	
 	}
+	
 }

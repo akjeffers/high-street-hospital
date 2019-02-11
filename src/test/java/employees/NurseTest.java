@@ -35,6 +35,4 @@ public class NurseTest {
 		assertEquals(bloodLevelAfterDrawn, bloodLevelBeforeDrawn - 1);
 	}
 	
-
-	
 }

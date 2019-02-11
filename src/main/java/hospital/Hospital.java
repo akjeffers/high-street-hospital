@@ -29,7 +29,6 @@ public class Hospital {
 		return patients;
 	}
 
-	// finish the below method/testing.......................................
 	public int getCleanliness() {
 		return cleanliness;
 	}
@@ -90,8 +89,8 @@ public class Hospital {
 
 	public int getTick() {
 		return tick;
-
 	}
+	
 	public void tickAllPatients() {
 		for (Patient patient : patients.values()) {
 			patient.tick();

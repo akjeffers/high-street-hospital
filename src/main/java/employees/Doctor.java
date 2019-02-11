@@ -18,8 +18,6 @@ public class Doctor extends Employee implements BloodDraw, CareForPatient {
 	public String toString() {
 		return getPosition() + " " + getName() + " " + getIdNumber() + " " + specialty;
 	}
-
-	//add tests for patient care somewhere................................................
 	
 	@Override
 	public void careForPatient(Patient patient) {
@@ -31,7 +29,6 @@ public class Doctor extends Employee implements BloodDraw, CareForPatient {
 	public void drawBlood(Patient patient) {
 		patient.lowerBloodLevel(2);	
 	}
-	
 
 	@Override
 	public int calculatePay() {

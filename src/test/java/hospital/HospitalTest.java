@@ -43,8 +43,10 @@ public class HospitalTest {
 	public void shouldBeAbleToRemoveEmployee() {
 		hospital.addEmployee(employee);
 		int employeesBeforeRemoving = hospital.getHospitalEmployeeSize();
+		System.out.println(hospital.getHospitalEmployeeSize());
 		hospital.removeEmployee(employee);
 		int employeesAfterRemoving = hospital.getHospitalEmployeeSize();
+		System.out.println(hospital.getHospitalEmployeeSize());
 		assertEquals(employeesAfterRemoving, employeesBeforeRemoving - 1);
 	}
 	
@@ -54,6 +56,7 @@ public class HospitalTest {
 		hospital.addEmployee(employeeTwo);
 		assertEquals(2, hospital.getHospitalEmployeeSize());
 	}
+	
 	@Test
 	public void shouldtickAll() {
 		Hospital hospital = new Hospital();
@@ -66,7 +69,7 @@ public class HospitalTest {
 		int cleanlinessAfterTick = hospital.getCleanliness();
 		assertEquals(bloodLevelBeforeTick - 2, bloodLevelAfterTick);
 		assertEquals(healthLevelBeforeTick - 3, healthLevelAfterTick);
-		assertEquals(cleanlinessBeforeTick - 10, cleanlinessAfterTick);
-		
+		assertEquals(cleanlinessBeforeTick - 10, cleanlinessAfterTick);	
 	}
+	
 }

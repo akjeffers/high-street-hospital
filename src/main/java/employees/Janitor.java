@@ -15,7 +15,6 @@ public abstract class Janitor extends Employee {
 
 	public void toggleWorkStatus() {
 		mainTaskStatus = !mainTaskStatus;
-	}
-	
+	}	
 	
 }

@@ -36,11 +36,10 @@ public class DoctorTest {
 		underTest.careForPatient(patientTest);
 		int healthAfterCare = patientTest.getHealthLevel();
 		assertEquals(healthAfterCare, healthBeforeCare + 3);
-
 	}
 	
 	@Test 
-	public void shouldDrawnBloodFromPatient() {
+	public void shouldDrawBloodFromPatient() {
 		int bloodLevelBeforeDrawn = patientTest.getBloodLevel();
 		underTest.drawBlood(patientTest);
 		int bloodLevelAfterDrawn = patientTest.getBloodLevel();

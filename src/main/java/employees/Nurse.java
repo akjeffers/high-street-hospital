@@ -8,7 +8,6 @@ public class Nurse extends Employee implements BloodDraw, CareForPatient {
 		super(name, idNumber, position);
 	}
 	
-	//add collection of patients?...............................................
 
 	@Override
 	public int calculatePay() {
@@ -29,7 +28,6 @@ public class Nurse extends Employee implements BloodDraw, CareForPatient {
 	@Override
 	public String toString() {
 		return getPosition() + " " + getName() + " " + getIdNumber();
-		//add printing of collection of patients, or as separate method?.............
 	}
 
 }

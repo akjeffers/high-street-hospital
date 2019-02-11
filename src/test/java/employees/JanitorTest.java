@@ -10,19 +10,9 @@ import hospital.Hospital;
 public class JanitorTest {
 
 	Janitor underTest;
-	Hospital hospitalTest;
 	@Before
 	public void setup() {
 		underTest = new NormalJanitor("Jorge", "234", "janitor");
-		hospitalTest = new Hospital();
-	}
-	
-	@Test
-	public void shouldDoMainWorkTask() {
-		boolean mainTaskStatusBefore = underTest.getMainTaskStatus();
-		underTest.toggleWorkStatus();
-		boolean mainTaskStatusAfter = underTest.getMainTaskStatus();
-		assertEquals(true, mainTaskStatusAfter);
 	}
 	
 	@Test

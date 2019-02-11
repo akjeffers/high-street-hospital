@@ -8,8 +8,6 @@ public class Receptionist extends Employee {
 		super(name, idNumber, position);
 		this.mainTaskStatus = false;
 	}
-
-// Getters
 	
 	public Boolean getMainTaskStatus() {
 		return mainTaskStatus;

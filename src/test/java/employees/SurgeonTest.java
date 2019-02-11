@@ -23,7 +23,6 @@ public class SurgeonTest {
 		underTest.careForPatient(patientTest);
 		int healthAfterCare = patientTest.getHealthLevel();
 		assertEquals(healthAfterCare, healthBeforeCare + 5);
-
 	}
 
 	@Test
@@ -33,4 +32,5 @@ public class SurgeonTest {
 		int bloodLevelAfterDrawn = patientTest.getBloodLevel();
 		assertEquals(bloodLevelAfterDrawn, bloodLevelBeforeDrawn - 4);
 	}
+	
 }
