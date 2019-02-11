@@ -83,7 +83,7 @@ public class Application {
 				break;
 
 			case "2":
-
+			
 				System.out.println("You've chosen item #2");
 				System.out.println("Here are the patient stats:");
 				for (Patient patient : hospital.getPatients().values()) {
@@ -111,6 +111,7 @@ public class Application {
 							nurse.careForPatient(patient);
 							System.out.println(patient.toString());
 						}
+						hospital.tick();
 						break;
 						
 					case "2":
@@ -150,12 +151,20 @@ public class Application {
 						}
 						System.out.println("Type in patient name to proceed");
 						patientName = input.nextLine();
+						while (!hospital.getPatients().containsKey(patientName)) {
+							for (Patient patient : hospital.getPatients().values()) {
+								System.out.println(patient.toString());	
+							}
+							System.out.println("Type in patient name to proceed");
+							patientName = input.nextLine();
+						}
 						Patient patientChoice = hospital.findPatient(patientName);
 						System.out.println(patientChoice.getName() + " is so happy to be helped!");
 				
 						nurse.careForPatient(patientChoice);
 						System.out.println(patientChoice.toString());
-
+						hospital.tickAllPatients();
+						hospital.tick();
 					break;
 					
 					case "2":
@@ -192,7 +201,9 @@ public class Application {
 					System.out.println("3. - Get Cleanliness level of hospital");
 					System.out.println("4. - Return to main menu");
 					String janitorChoice = input.nextLine();
-			
+					hospital.tick();
+					hospital.tick();
+					hospital.tick();
 					switch (janitorChoice) {
 					
 					case "1":
@@ -214,6 +225,7 @@ public class Application {
 					
 					case "3":
 						System.out.println(hospital.getCleanliness());
+						hospital.tickAllPatients();
 					break;	
 						
 					case "4":
